@@ -1,11 +1,11 @@
-name: simple-logo-generator
-title: simple-logo-generator
+name: image-generator
+title: image-generator
 description: A Blocklet DAPP blocklet
 keywords:
   - blocklet
   - react
 group: dapp
-did: z8ia1gmMLZ2Wo6Y6rpDyLn3STBqD3Gjd19KEK
+did: z8ia3a66nQ7eqpSbj37cZj6qNnsmMsuUkATmP
 main: api/index.js
 author:
   name: 7ac

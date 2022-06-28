@@ -1,3 +1,3 @@
-# simple-logo-generator
+# image-generator
 
 A react template for creating a new blocklet project.
