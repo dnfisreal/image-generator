@@ -1,19 +1,35 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-import logo from '../logo.svg';
+// import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <header className="app-header">
-      <img src={logo} className="app-logo" alt="logo" />
-      <Link className="app-link" to="/about">
-        About
-      </Link>
-      <a className="app-link" href="https://docs.arcblock.io/abtnode/" target="_blank" rel="noopener noreferrer">
-        Learn Blocklet
-      </a>
-    </header>
+    <>
+      <div className="instruction">
+        <p>
+          Select a template below for your image. There are five themes and each theme has 6 templates. Click "Select"
+          to continue.
+        </p>
+      </div>
+
+      <div className="education">
+        <p>Theme - Education</p>
+      </div>
+      <div className="technology">
+        <p>Theme - Technology</p>
+      </div>
+      <div className="entertainment">
+        <p>Theme - Entertainment</p>
+      </div>
+      <div className="finance">
+        <p>Theme - Finance</p>
+      </div>
+      <div className="environment">
+        <p>Theme - Environment</p>
+      </div>
+      {/* <div className="Button">
+        <button type="button">Select</button>
+      </div> */}
+    </>
   );
 };
 

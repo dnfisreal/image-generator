@@ -1,0 +1,68 @@
+.instruction {
+  height: 30px;
+}
+
+.instruction p {
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.education {
+  position: relative;
+  height: 300px;
+}
+
+.education p {
+  position: absolute;
+  left: 2.5%;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.technology {
+  position: relative;
+  height: 300px;
+}
+
+.technology p {
+  position: absolute;
+  left: 2.5%;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.entertainment {
+  position: relative;
+  height: 300px;
+}
+
+.entertainment p {
+  position: absolute;
+  left: 2.5%;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.finance {
+  position: relative;
+  height: 300px;
+}
+
+.finance p {
+  position: absolute;
+  left: 2.5%;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.environment {
+  position: relative;
+  height: 300px;
+}
+
+.environment p {
+  position: absolute;
+  left: 2.5%;
+  font-style: italic;
+  font-size: 18px;
+}
