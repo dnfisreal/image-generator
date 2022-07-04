@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 import './app.css';
-import './home.css';
 import Home from './pages/home';
+import Playground from './pages/playground';
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/playground" element={<Playground />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>

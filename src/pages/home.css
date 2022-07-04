@@ -1,0 +1,19 @@
+.instruction {
+  height: 35px;
+}
+
+.instruction p {
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.selection {
+  display: flex;
+  padding: 10px;
+}
+
+.selection button {
+  border-width: 1.5px;
+  background: none;
+  font-size: 20px;
+}

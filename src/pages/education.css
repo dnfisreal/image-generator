@@ -1,12 +1,3 @@
-.instruction {
-  height: 30px;
-}
-
-.instruction p {
-  font-weight: bold;
-  font-size: 23px;
-}
-
 .education {
   position: relative;
   height: 35px;
@@ -14,9 +5,10 @@
 
 .education p {
   position: absolute;
-  left: 2.5%;
+  left: 50%;
+  transform: translate(-50%, 0%);
   font-style: italic;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .education-template-block1 {
@@ -68,52 +60,4 @@
   font-size: 17px;
   margin: 4px 2px;
   cursor: pointer;
-}
-
-.technology {
-  position: relative;
-  height: 300px;
-}
-
-.technology p {
-  position: absolute;
-  left: 2.5%;
-  font-style: italic;
-  font-size: 18px;
-}
-
-.entertainment {
-  position: relative;
-  height: 300px;
-}
-
-.entertainment p {
-  position: absolute;
-  left: 2.5%;
-  font-style: italic;
-  font-size: 18px;
-}
-
-.finance {
-  position: relative;
-  height: 300px;
-}
-
-.finance p {
-  position: absolute;
-  left: 2.5%;
-  font-style: italic;
-  font-size: 18px;
-}
-
-.environment {
-  position: relative;
-  height: 300px;
-}
-
-.environment p {
-  position: absolute;
-  left: 2.5%;
-  font-style: italic;
-  font-size: 18px;
 }

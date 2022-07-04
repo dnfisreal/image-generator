@@ -1,11 +1,59 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import education1 from '../templates/education_1.jpg';
-import education2 from '../templates/education_2.jpg';
-import education3 from '../templates/education_3.jpg';
-import education4 from '../templates/education_4.jpg';
+import Education from './education';
+import Technology from './technology';
+import Entertainment from './entertainment';
+import Finance from './finance';
+import Environment from './environment';
+import './home.css';
 
 const Home = () => {
+  const [isShownEducation, setIsShownEducation] = useState(true);
+  const [isShownTechnology, setIsShownTechnology] = useState(false);
+  const [isShownEntertainment, setIsShownEntertainment] = useState(false);
+  const [isShownFinance, setIsShownFinance] = useState(false);
+  const [isShownEnvironment, setIsShownEnvironment] = useState(false);
+
+  const educationClick = () => {
+    setIsShownEducation(true);
+    setIsShownTechnology(false);
+    setIsShownEntertainment(false);
+    setIsShownFinance(false);
+    setIsShownEnvironment(false);
+  };
+
+  const technologyClick = () => {
+    setIsShownEducation(false);
+    setIsShownTechnology(true);
+    setIsShownEntertainment(false);
+    setIsShownFinance(false);
+    setIsShownEnvironment(false);
+  };
+
+  const entertainmentClick = () => {
+    setIsShownEducation(false);
+    setIsShownTechnology(false);
+    setIsShownEntertainment(true);
+    setIsShownFinance(false);
+    setIsShownEnvironment(false);
+  };
+
+  const financeClick = () => {
+    setIsShownEducation(false);
+    setIsShownTechnology(false);
+    setIsShownEntertainment(false);
+    setIsShownFinance(true);
+    setIsShownEnvironment(false);
+  };
+
+  const environmentClick = () => {
+    setIsShownEducation(false);
+    setIsShownTechnology(false);
+    setIsShownEntertainment(false);
+    setIsShownFinance(false);
+    setIsShownEnvironment(true);
+  };
+
   return (
     <>
       <div className="instruction">
@@ -15,52 +63,29 @@ const Home = () => {
         </p>
       </div>
 
-      <div className="education">
-        <p>Theme - Education</p>
+      <div className="selection">
+        <button type="button" onClick={educationClick}>
+          Education
+        </button>
+        <button type="button" onClick={technologyClick}>
+          Technology
+        </button>
+        <button type="button" onClick={entertainmentClick}>
+          Entertainment
+        </button>
+        <button type="button" onClick={financeClick}>
+          Finance
+        </button>
+        <button type="button" onClick={environmentClick}>
+          Environment
+        </button>
       </div>
 
-      <div className="education-template-block1">
-        <div className="edcation-template1">
-          <img src={education1} alt="Education Template 1" />
-          <button type="button">Select</button>
-        </div>
-        <div className="edcation-template2">
-          <img src={education2} alt="Education Template 2" />
-          <button type="button">Select</button>
-        </div>
-        <div className="edcation-template3">
-          <img src={education3} alt="Education Template 3" />
-          <button type="button">Select</button>
-        </div>
-      </div>
-
-      <div className="education-template-block2">
-        <div className="edcation-template4">
-          <img src={education4} alt="Education Template 4" />
-          <button type="button">Select</button>
-        </div>
-        <div className="edcation-template5">
-          <img src={education4} alt="Education Template 5" />
-          <button type="button">Select</button>
-        </div>
-        <div className="edcation-template6">
-          <img src={education4} alt="Education Template 6" />
-          <button type="button">Select</button>
-        </div>
-      </div>
-
-      <div className="technology">
-        <p>Theme - Technology</p>
-      </div>
-      <div className="entertainment">
-        <p>Theme - Entertainment</p>
-      </div>
-      <div className="finance">
-        <p>Theme - Finance</p>
-      </div>
-      <div className="environment">
-        <p>Theme - Environment</p>
-      </div>
+      {isShownEducation && <Education />}
+      {isShownTechnology && <Technology />}
+      {isShownEntertainment && <Entertainment />}
+      {isShownFinance && <Finance />}
+      {isShownEnvironment && <Environment />}
     </>
   );
 };
