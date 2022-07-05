@@ -13,7 +13,12 @@
 }
 
 .selection button {
-  border-width: 1.5px;
-  background: none;
+  margin: auto;
+  border: none;
+  background-color: rgb(33, 62, 228);
+  color: white;
+  padding: 10px 60px;
   font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
 }
