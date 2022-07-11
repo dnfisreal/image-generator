@@ -1,0 +1,24 @@
+.environment {
+  position: relative;
+  height: 35px;
+}
+
+.environment p {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  font-style: italic;
+  font-size: 20px;
+}
+
+.environment-template-block1 {
+  display: flex;
+  padding: 13px;
+  height: 357px;
+}
+
+.environment-template-block2 {
+  display: flex;
+  padding: 13px;
+  margin-bottom: 25px;
+}

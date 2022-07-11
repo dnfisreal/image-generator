@@ -8,7 +8,7 @@ module.exports = {
     port,
     client: {
       // If you want to development this blocklet without blocklet-server, you can delete next line, otherwise the hot reload will be failed.
-      webSocketURL: 'wss://0.0.0.0/ws',
+      // webSocketURL: 'wss://0.0.0.0/ws',
     },
     proxy: {
       '/api': {

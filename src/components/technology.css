@@ -1,0 +1,24 @@
+.technology {
+  position: relative;
+  height: 35px;
+}
+
+.technology p {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  font-style: italic;
+  font-size: 20px;
+}
+
+.technology-template-block1 {
+  display: flex;
+  padding: 13px;
+  height: 357px;
+}
+
+.technology-template-block2 {
+  display: flex;
+  padding: 13px;
+  margin-bottom: 25px;
+}

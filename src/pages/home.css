@@ -12,13 +12,28 @@
   padding: 10px;
 }
 
-.selection button {
+.categoryButton1 {
   margin: auto;
   border: none;
-  background-color: rgb(33, 62, 228);
   color: white;
   padding: 10px 60px;
   font-size: 20px;
   cursor: pointer;
   border-radius: 5px;
+  background-color: blue;
+}
+
+.categoryButton1:hover {
+  background-color: orange;
+}
+
+.categoryButton2 {
+  margin: auto;
+  border: none;
+  color: white;
+  padding: 10px 60px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: orange;
 }
