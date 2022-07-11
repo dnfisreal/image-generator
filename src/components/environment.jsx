@@ -17,15 +17,15 @@ const Environment = () => {
       </div>
 
       <div className="environment-template-block1">
-        <Template alt="Environment Template 1" imageSource={environment1} />
-        <Template alt="Environment Template 2" imageSource={environment2} />
-        <Template alt="Environment Template 3" imageSource={environment3} />
+        <Template alt="Environment Template 1" imageSource={environment1} width={521} height={260} />
+        <Template alt="Environment Template 2" imageSource={environment2} width={624} height={260} />
+        <Template alt="Environment Template 3" imageSource={environment3} width={672} height={420} />
       </div>
 
       <div className="environment-template-block2">
-        <Template alt="Environment Template 4" imageSource={environment4} />
-        <Template alt="Environment Template 5" imageSource={environment5} />
-        <Template alt="Environment Template 6" imageSource={environment6} />
+        <Template alt="Environment Template 4" imageSource={environment4} width={612} height={398} />
+        <Template alt="Environment Template 5" imageSource={environment5} width={400} height={267} />
+        <Template alt="Environment Template 6" imageSource={environment6} width={356} height={200} />
       </div>
     </>
   );

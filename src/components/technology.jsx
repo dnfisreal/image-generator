@@ -17,15 +17,15 @@ const Technology = () => {
       </div>
 
       <div className="technology-template-block1">
-        <Template alt="Technology Template 1" imageSource={technology1} />
-        <Template alt="Technology Template 2" imageSource={technology2} />
-        <Template alt="Technology Template 3" imageSource={technology3} />
+        <Template alt="Technology Template 1" imageSource={technology1} width={626} height={417} />
+        <Template alt="Technology Template 2" imageSource={technology2} width={640} height={480} />
+        <Template alt="Technology Template 3" imageSource={technology3} width={667} height={462} />
       </div>
 
       <div className="technology-template-block2">
-        <Template alt="Technology Template 4" imageSource={technology4} />
-        <Template alt="Technology Template 5" imageSource={technology5} />
-        <Template alt="Technology Template 6" imageSource={technology6} />
+        <Template alt="Technology Template 4" imageSource={technology4} width={384} height={240} />
+        <Template alt="Technology Template 5" imageSource={technology5} width={640} height={427} />
+        <Template alt="Technology Template 6" imageSource={technology6} width={717} height={544} />
       </div>
     </>
   );
