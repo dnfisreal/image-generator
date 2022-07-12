@@ -1,6 +1,6 @@
-import React, { createRef, useState, useEffect } from 'react';
+import React, { createRef, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import { useScreenshot, createFileName } from 'use-react-screenshot';
+import { useScreenshot, createFileName } from '../libs/screenshot';
 
 import education1 from '../templates/education_1.jpg';
 import './playground.css';
@@ -9,18 +9,11 @@ const Playground = () => {
   const ref = createRef(null);
   const location = useLocation();
 
-  const [height, setHeight] = useState(location.state.height);
-  const [width, setWidth] = useState(location.state.width);
-  const [flag, setFlag] = useState(0);
+  const [height, setHeight] = useState(location.state ? location.state.height : 400);
+  const [width, setWidth] = useState(location.state ? location.state.width : 600);
 
   const [textContent, setTextContent] = useState('Test');
   const [fontSize, setFontSize] = useState(30);
-
-  useEffect(() => {
-    if (flag !== 0) {
-      downloadScreenshot();
-    }
-  }, [flag]);
 
   const [, takeScreenShot] = useScreenshot();
 
@@ -31,18 +24,8 @@ const Playground = () => {
     a.click();
   };
 
-  const adjustSize = () => {
-    setHeight(location.state.height / 2);
-    setWidth(location.state.width / 2);
-    setFontSize(fontSize / 2);
-    setFlag(flag + 1);
-  };
-
   const downloadScreenshot = () => {
     takeScreenShot(ref.current).then(download);
-    setHeight(location.state.height);
-    setWidth(location.state.width);
-    setFontSize(fontSize * 2);
   };
 
   return (
@@ -54,48 +37,70 @@ const Playground = () => {
         <h2>Edit your image below</h2>
       </div>
 
-      <div className="all-regions">
-        <div className="blank" />
-        <div ref={ref} className="screenshot" style={{ width, height }}>
+      <div className="preview-region">
+        <div ref={ref} className="screenshot" width={width} height={height}>
           <img
-            style={{ width, height }}
+            width={width}
+            height={height}
             src={location.state ? location.state.imageSource : education1}
             alt="Current template"
           />
           <p style={{ fontSize: Number(fontSize) }}>{textContent}</p>
+        </div>
+      </div>
 
-          <div className="two-buttons">
-            <button type="button" onClick={adjustSize}>
-              Download
-            </button>
-          </div>
+      <div className="parameter-region">
+        <div className="set-width">
+          <label className="image-width-label" htmlFor="image-width">
+            Width of the image:
+            <input
+              value={width}
+              placeholder={location.state ? location.state.width : '600'}
+              onChange={(e) => setWidth(e.target.value)}
+            />
+          </label>
         </div>
 
-        <div className="all-parameters">
-          <div className="text-content">
-            <label className="text-content-label" htmlFor="text-content">
-              Text content:
-              <input
-                className="text-content-input"
-                value={textContent}
-                placeholder="Test"
-                onChange={(e) => setTextContent(e.target.value)}
-              />
-            </label>
-          </div>
-
-          <div className="font-size">
-            <label className="font-size-label" htmlFor="font-size">
-              Text size:
-              <input
-                className="font-size-input"
-                value={fontSize}
-                placeholder="30"
-                onChange={(e) => setFontSize(e.target.value)}
-              />
-            </label>
-          </div>
+        <div className="set-height">
+          <label className="image-height-label" htmlFor="image-height">
+            Height of the image:
+            <input
+              value={height}
+              placeholder={location.state ? location.state.height : '400'}
+              onChange={(e) => setHeight(e.target.value)}
+            />
+          </label>
         </div>
+
+        <div className="text-content">
+          <label className="text-content-label" htmlFor="text-content">
+            Text content:
+            <input
+              className="text-content-input"
+              value={textContent}
+              placeholder="Test"
+              onChange={(e) => setTextContent(e.target.value)}
+            />
+          </label>
+        </div>
+
+        <div className="font-size">
+          <label className="font-size-label" htmlFor="font-size">
+            Text size:
+            <input
+              className="font-size-input"
+              value={fontSize}
+              placeholder="30"
+              onChange={(e) => setFontSize(e.target.value)}
+            />
+          </label>
+        </div>
+      </div>
+
+      <div className="two-buttons">
+        <button type="button" onClick={downloadScreenshot}>
+          Download
+        </button>
       </div>
     </div>
   );

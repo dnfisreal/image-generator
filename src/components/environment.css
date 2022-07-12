@@ -15,10 +15,12 @@
   display: flex;
   padding: 13px;
   height: 357px;
+  justify-content: center;
 }
 
 .environment-template-block2 {
   display: flex;
   padding: 13px;
   margin-bottom: 25px;
+  justify-content: center;
 }

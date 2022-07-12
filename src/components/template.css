@@ -1,3 +1,9 @@
+.one-template {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .one-template img {
   width: 448px;
   height: 300px;
