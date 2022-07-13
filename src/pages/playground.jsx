@@ -3,6 +3,8 @@ import { useLocation, Link } from 'react-router-dom';
 import { useScreenshot, createFileName } from '../libs/screenshot';
 
 import education1 from '../templates/education_1.jpg';
+import ImageSize from '../components/image-size';
+import TextPosition from '../components/text-position';
 import './playground.css';
 
 const Playground = () => {
@@ -14,6 +16,8 @@ const Playground = () => {
 
   const [textContent, setTextContent] = useState('Test');
   const [fontSize, setFontSize] = useState(30);
+  const [topMargin, setTopMargin] = useState('50');
+  const [leftMargin, setLeftMargin] = useState('50');
 
   const [, takeScreenShot] = useScreenshot();
 
@@ -45,56 +49,67 @@ const Playground = () => {
             src={location.state ? location.state.imageSource : education1}
             alt="Current template"
           />
-          <p style={{ fontSize: Number(fontSize) }}>{textContent}</p>
+          <pre style={{ fontSize: Number(fontSize), top: `${topMargin}%`, left: `${leftMargin}%` }}>{textContent}</pre>
         </div>
       </div>
 
       <div className="parameter-region">
-        <div className="set-width">
-          <label className="image-width-label" htmlFor="image-width">
-            Width of the image:
-            <input
-              value={width}
-              placeholder={location.state ? location.state.width : '600'}
-              onChange={(e) => setWidth(e.target.value)}
-            />
-          </label>
+        <div className="image-size-region">
+          <p>Set the image size:</p>
+          <ImageSize
+            name="Width of the image:"
+            value={width}
+            setValue={setWidth}
+            placeHolder={location.state ? String(location.state.width) : '600'}
+          />
+          <ImageSize
+            name="Height of the image:"
+            value={height}
+            setValue={setHeight}
+            placeHolder={location.state ? String(location.state.height) : '400'}
+          />
         </div>
 
-        <div className="set-height">
-          <label className="image-height-label" htmlFor="image-height">
-            Height of the image:
-            <input
-              value={height}
-              placeholder={location.state ? location.state.height : '400'}
-              onChange={(e) => setHeight(e.target.value)}
-            />
-          </label>
+        <div className="text-region">
+          <p>Add text to the image:</p>
+          <div className="text-content">
+            <label className="text-content-label" htmlFor="text-content">
+              Text content:
+              <textarea
+                className="text-content-input"
+                value={textContent}
+                placeholder="Test"
+                onChange={(e) => setTextContent(e.target.value)}
+              />
+            </label>
+          </div>
         </div>
 
-        <div className="text-content">
-          <label className="text-content-label" htmlFor="text-content">
-            Text content:
-            <input
-              className="text-content-input"
-              value={textContent}
-              placeholder="Test"
-              onChange={(e) => setTextContent(e.target.value)}
-            />
-          </label>
-        </div>
+        <div className="text-parameters">
+          <p>Set the size and the position of the text:</p>
+          <div className="font-size">
+            <label className="font-size-label" htmlFor="font-size">
+              Text size:
+              <input
+                className="font-size-input"
+                value={fontSize}
+                placeholder="30"
+                onChange={(e) => setFontSize(e.target.value)}
+              />
+            </label>
+          </div>
 
-        <div className="font-size">
-          <label className="font-size-label" htmlFor="font-size">
-            Text size:
-            <input
-              className="font-size-input"
-              value={fontSize}
-              placeholder="30"
-              onChange={(e) => setFontSize(e.target.value)}
-            />
-          </label>
+          <TextPosition name="Top margin (Negative value is accecptable):" value={topMargin} setValue={setTopMargin} />
+          <TextPosition
+            name="Left margin (Negative value is accecptable):"
+            value={leftMargin}
+            setValue={setLeftMargin}
+          />
         </div>
+      </div>
+
+      <div className="parameter-region2">
+        <p>Set the font style and the color of the text:</p>
       </div>
 
       <div className="two-buttons">

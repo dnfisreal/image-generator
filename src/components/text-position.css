@@ -1,0 +1,14 @@
+.text-margin::after {
+  content: '%';
+}
+
+.text-margin-label {
+  font-size: 18px;
+}
+
+.text-margin-input {
+  font-size: 18px;
+  margin: 5px;
+  padding: 3px;
+  width: 40px;
+}

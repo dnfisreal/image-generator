@@ -23,43 +23,80 @@
   display: block;
 }
 
-.screenshot p {
+.screenshot pre {
   position: absolute;
   left: 50%;
-  top: 50%;
   transform: translate(-50%, -50%);
 }
 
 .parameter-region {
-  padding-top: 40px;
+  padding-top: 35px;
+  padding-left: 5%;
   position: relative;
-  text-align: center;
+  display: flex;
+  justify-content: left;
+}
+
+.image-size-region {
+  text-align: left;
+}
+
+.image-size-region p {
+  font-size: 20px;
+  color: teal;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.text-region {
+  text-align: left;
+  padding-left: 3%;
+}
+
+.text-region p {
+  font-size: 20px;
+  color: teal;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .text-content-label {
-  font-size: 20px;
+  font-size: 18px;
+  vertical-align: middle;
 }
 
 .text-content-input {
-  font-size: 20px;
+  font-size: 18px;
   margin: 5px;
-  width: 300px;
+  width: 235px;
+  height: 100px;
   padding: 3px;
+  vertical-align: middle;
+}
+
+.text-parameters {
+  text-align: left;
+  padding-left: 3%;
+}
+
+.text-parameters p {
+  font-size: 20px;
+  color: teal;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  white-space: pre;
 }
 
 .font-size-label {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .font-size-input {
-  font-size: 20px;
+  font-size: 18px;
   margin: 5px;
-  width: 75px;
-  padding: 2.5px;
+  width: 40px;
+  padding: 3px;
 }
 
 .two-buttons {
-  padding-top: 20px;
+  padding-top: 3%;
 }
 
 .two-buttons button {
