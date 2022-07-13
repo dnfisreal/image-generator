@@ -1,0 +1,13 @@
+.text-content-label {
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+.text-content-input {
+  font-size: 18px;
+  margin: 5px;
+  width: 235px;
+  height: 100px;
+  padding: 3px;
+  vertical-align: middle;
+}

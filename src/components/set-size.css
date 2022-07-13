@@ -1,10 +1,9 @@
-.image-size-label {
+.set-size-label {
   font-size: 18px;
 }
 
-.image-size-input {
+.set-size-input {
   font-size: 18px;
   margin: 5px;
-  width: 60px;
   padding: 3px;
 }
