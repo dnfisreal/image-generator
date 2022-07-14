@@ -3,10 +3,14 @@ import { useLocation, Link } from 'react-router-dom';
 
 import { useScreenshot, createFileName } from '../libs/screenshot';
 import education1 from '../templates/education_1.jpg';
+
+import Text from '../components/text';
 import SetSize from '../components/set-size';
 import TextPosition from '../components/text-position';
 import TextContent from '../components/text-content';
 import TextFamily from '../components/text-family';
+import TextColor from '../components/text-color';
+
 import './playground.css';
 
 const Playground = () => {
@@ -23,6 +27,7 @@ const Playground = () => {
   const [leftMargin, setLeftMargin] = useState('50');
 
   const [fontStyle, setFontStyle] = useState('Arial, Helvetica, sans-serif');
+  const [textColor, setTextColor] = useState('#000000');
 
   const [, takeScreenShot] = useScreenshot();
 
@@ -54,15 +59,14 @@ const Playground = () => {
             src={location.state ? location.state.imageSource : education1}
             alt="Current template"
           />
-          <pre
-            style={{
-              fontSize: Number(fontSize),
-              top: `${topMargin}%`,
-              left: `${leftMargin}%`,
-              fontFamily: fontStyle,
-            }}>
-            {textContent}
-          </pre>
+          <Text
+            fontSize={fontSize}
+            topMargin={topMargin}
+            leftMargin={leftMargin}
+            fontStyle={fontStyle}
+            textColor={textColor}
+            textContent={textContent}
+          />
         </div>
       </div>
 
@@ -128,6 +132,7 @@ const Playground = () => {
 
         <div className="text-color-region">
           <p>Set the color of the text:</p>
+          <TextColor value={textColor} setValue={setTextColor} />
         </div>
       </div>
 
