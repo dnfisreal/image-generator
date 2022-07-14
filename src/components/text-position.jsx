@@ -1,20 +1,26 @@
 import React from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
 import PropTypes from 'prop-types';
 
-import './text-position.css';
-
-const TextPosition = ({ name, value, setValue }) => {
+const TextPosition = ({ name, value, setValue, placeHolder }) => {
   return (
     <div className="text-margin">
-      <label className="text-margin-label" htmlFor="text-margin">
-        {name}
-        <input
-          className="text-margin-input"
+      <Box m={2}>
+        <TextField
+          label={name}
           value={value}
-          placeholder="50"
+          placeholder={placeHolder}
+          style={{ width: 170 }}
+          InputProps={{
+            endAdornment: <InputAdornment position="end">%</InputAdornment>,
+            inputProps: { style: { textAlign: 'center' } },
+          }}
           onChange={(e) => setValue(e.target.value)}
+          variant="standard"
         />
-      </label>
+      </Box>
     </div>
   );
 };
@@ -23,6 +29,7 @@ TextPosition.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   setValue: PropTypes.func.isRequired,
+  placeHolder: PropTypes.string.isRequired,
 };
 
 export default TextPosition;

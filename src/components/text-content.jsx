@@ -1,26 +1,23 @@
 import React from 'react';
+import TextField from '@mui/material/TextField';
 import PropTypes from 'prop-types';
 
-import './text-content.css';
-
-const TextContent = ({ name, value, setValue }) => {
+const TextContent = ({ value, setValue }) => {
   return (
     <div className="text-content">
-      <label className="text-content-label" htmlFor="text-content">
-        {name}
-        <textarea
-          className="text-content-input"
-          value={value}
-          placeholder="Type you text here"
-          onChange={(e) => setValue(e.target.value)}
-        />
-      </label>
+      <TextField
+        multiline
+        minRows={3}
+        value={value}
+        placeholder="Type you text here"
+        style={{ width: 350 }}
+        onChange={(e) => setValue(e.target.value)}
+      />
     </div>
   );
 };
 
 TextContent.propTypes = {
-  name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   setValue: PropTypes.func.isRequired,
 };

@@ -31,14 +31,14 @@
 
 .parameter-region {
   padding-top: 25px;
-  padding-left: 5%;
   position: relative;
   display: flex;
-  justify-content: left;
+  justify-content: center;
 }
 
 .image-size-region {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .image-size-region p {
@@ -47,9 +47,13 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.set-image-size {
+  display: flex;
+  text-align: center;
+}
+
 .text-region {
-  text-align: left;
-  padding-left: 3%;
+  padding-left: 6%;
 }
 
 .text-region p {
@@ -59,27 +63,21 @@
 }
 
 .text-parameters {
-  text-align: left;
-  padding-left: 3%;
+  padding-left: 6%;
+  display: flex;
+  flex-direction: column;
 }
 
-.text-parameters p {
-  font-size: 20px;
-  color: teal;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  white-space: pre;
+.text-size-and-position {
+  display: flex;
+  text-align: center;
 }
 
 .parameter-region2 {
-  padding-top: 5px;
-  padding-left: 5%;
+  padding-top: 15px;
   position: relative;
   display: flex;
-  justify-content: left;
-}
-
-.font-style-region {
-  text-align: left;
+  justify-content: center;
 }
 
 .font-style-region p {
@@ -88,11 +86,19 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.dropdown-menu {
+.text-color-region {
+  padding-left: 6%;
+}
+
+.text-color-region p {
+  font-size: 20px;
+  color: teal;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .two-buttons {
   padding-top: 3%;
+  padding-bottom: 3%;
 }
 
 .two-buttons button {
