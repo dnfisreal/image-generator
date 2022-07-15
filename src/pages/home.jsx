@@ -8,6 +8,7 @@ import Environment from '../components/environment';
 import './home.css';
 
 const Home = () => {
+  // A variable indicating which topic is chosen currently
   const [selectedType, setSelectedType] = useState('education');
 
   const educationClick = () => {

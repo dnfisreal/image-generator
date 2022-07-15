@@ -2,6 +2,7 @@ import React from 'react';
 import TextField from '@mui/material/TextField';
 import PropTypes from 'prop-types';
 
+// Use this component to display the multiline text field and set the text content added to the image.
 const TextContent = ({ value, setValue }) => {
   return (
     <div className="text-content">

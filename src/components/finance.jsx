@@ -16,6 +16,7 @@ const Finance = () => {
         <p>Theme - Finance</p>
       </div>
 
+      {/* Display all six templates */}
       <div className="finance-template-block1">
         <Template alt="Finance Template 1" imageSource={finance1} width={732} height={336} />
         <Template alt="Finance Template 2" imageSource={finance2} width={550} height={367} />

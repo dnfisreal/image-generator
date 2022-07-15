@@ -6,7 +6,9 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import PropTypes from 'prop-types';
 
+// Use this component to display the select field and set the font family of the text.
 const TextFamily = ({ labelName, value, setValue }) => {
+  // The variable to store all available font styles.
   const allTypes = [
     '"Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif',
     '"Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif',
@@ -15,7 +17,7 @@ const TextFamily = ({ labelName, value, setValue }) => {
     '"Courier New", Courier, monospace',
     '"Times New Roman", Times, serif',
     '"Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif',
-    'Arial, Helvetica, sans-serif',
+    'Arial, Helvetica, sans-serif', // Default one
     'Cambria, Cochin, Georgia, Times, "Times New Roman", serif',
     'Georgia, "Times New Roman", Times, serif',
     'Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif',
@@ -29,6 +31,7 @@ const TextFamily = ({ labelName, value, setValue }) => {
         <FormControl fullWidth>
           <InputLabel id="font-style-select-label">{labelName}</InputLabel>
           <Select value={value} label="Font style" onChange={(e) => setValue(e.target.value)}>
+            {/* Generate all the font styles based on the array */}
             {allTypes.map((fontType) => (
               <MenuItem value={fontType}>{fontType}</MenuItem>
             ))}

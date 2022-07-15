@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import PropTypes from 'prop-types';
 
+// Use this component to set sizes of certain things, such as the image size and the text size.
 const SetSize = ({ name, value, setValue, placeHolder, width }) => {
   return (
     <div className="set-size">

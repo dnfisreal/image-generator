@@ -16,6 +16,7 @@ const Entertainment = () => {
         <p>Theme - Entertainment</p>
       </div>
 
+      {/* Display all six templates */}
       <div className="entertainment-template-block1">
         <Template alt="Entertainment Template 1" imageSource={entertainment1} width={513} height={340} />
         <Template alt="Entertainment Template 2" imageSource={entertainment2} width={612} height={357} />

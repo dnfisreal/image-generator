@@ -14,23 +14,33 @@ import TextColor from '../components/text-color';
 import './playground.css';
 
 const Playground = () => {
+  // The variable for getting the screenshot div
   const ref = createRef(null);
   const location = useLocation();
 
-  const [height, setHeight] = useState(location.state ? String(location.state.height) : '400');
+  // Width and height of the image
   const [width, setWidth] = useState(location.state ? String(location.state.width) : '600');
+  const [height, setHeight] = useState(location.state ? String(location.state.height) : '400');
 
+  // Text content added to the image
   const [textContent, setTextContent] = useState('');
 
+  // Size of the text
   const [fontSize, setFontSize] = useState('');
+
+  // Two variables indicating the distance from the text to the top and left border of the image respectively
   const [topMargin, setTopMargin] = useState('45');
   const [leftMargin, setLeftMargin] = useState('50');
 
+  // Font family of the text
   const [fontStyle, setFontStyle] = useState('Arial, Helvetica, sans-serif');
+
+  // Color of the text
   const [textColor, setTextColor] = useState('#000000');
 
   const [, takeScreenShot] = useScreenshot();
 
+  // Download the generated image as a jpg file named "image"
   const download = (img, { name = 'image', extension = 'jpg' } = {}) => {
     const a = document.createElement('a');
     a.href = img;
@@ -38,6 +48,7 @@ const Playground = () => {
     a.click();
   };
 
+  // Take the screenshot to generate the image and then download it to the user's disk
   const downloadScreenshot = () => {
     takeScreenShot(ref.current).then(download);
   };
@@ -51,6 +62,7 @@ const Playground = () => {
         <h2>Edit your image below</h2>
       </div>
 
+      {/* Region showing the previewed image */}
       <div className="preview-region">
         <div ref={ref} className="screenshot" width={Number(width)} height={Number(height)}>
           <img
@@ -71,6 +83,7 @@ const Playground = () => {
       </div>
 
       <div className="parameter-region">
+        {/* Region for adjusting the size of the image */}
         <div className="image-size-region">
           <p>Set the image size:</p>
           <div className="set-image-size">
@@ -91,11 +104,13 @@ const Playground = () => {
           </div>
         </div>
 
+        {/* Region for adding text to the image */}
         <div className="text-region">
           <p>Add text to the image:</p>
           <TextContent value={textContent} setValue={setTextContent} />
         </div>
 
+        {/* Region for adjusting the size and the position of the text */}
         <div className="text-parameters">
           <p
             style={{
@@ -125,11 +140,13 @@ const Playground = () => {
       </div>
 
       <div className="parameter-region2">
+        {/* Region for adjusting the font family of the text */}
         <div className="font-style-region">
           <p>Set the font style of the text:</p>
           <TextFamily labelName="Font style" value={fontStyle} setValue={setFontStyle} />
         </div>
 
+        {/* Region for adjusting the color of the text */}
         <div className="text-color-region">
           <p>Set the color of the text:</p>
           <TextColor value={textColor} setValue={setTextColor} />

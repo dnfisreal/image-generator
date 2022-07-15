@@ -4,6 +4,7 @@ import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import PropTypes from 'prop-types';
 
+// Use this component to set the position of the text, including the top and the left margin.
 const TextPosition = ({ name, value, setValue, placeHolder }) => {
   return (
     <div className="text-margin">
@@ -13,6 +14,8 @@ const TextPosition = ({ name, value, setValue, placeHolder }) => {
           value={value}
           placeholder={placeHolder}
           style={{ width: 170 }}
+          // Since the variable passed into the text style is in percentage form,
+          // add a "%" suffix after the text field.
           InputProps={{
             endAdornment: <InputAdornment position="end">%</InputAdornment>,
             inputProps: { style: { textAlign: 'center' } },

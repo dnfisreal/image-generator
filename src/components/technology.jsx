@@ -16,6 +16,7 @@ const Technology = () => {
         <p>Theme - Technology</p>
       </div>
 
+      {/* Display all six templates */}
       <div className="technology-template-block1">
         <Template alt="Technology Template 1" imageSource={technology1} width={626} height={417} />
         <Template alt="Technology Template 2" imageSource={technology2} width={640} height={480} />

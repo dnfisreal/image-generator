@@ -16,6 +16,7 @@ const Environment = () => {
         <p>Theme - Environment</p>
       </div>
 
+      {/* Display all six templates */}
       <div className="environment-template-block1">
         <Template alt="Environment Template 1" imageSource={environment1} width={521} height={260} />
         <Template alt="Environment Template 2" imageSource={environment2} width={624} height={260} />

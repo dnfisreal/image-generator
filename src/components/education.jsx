@@ -16,6 +16,7 @@ const Education = () => {
         <p>Theme - Education</p>
       </div>
 
+      {/* Display all six templates */}
       <div className="education-template-block1">
         <Template alt="Education Template 1" imageSource={education1} width={600} height={400} />
         <Template alt="Education Template 2" imageSource={education2} width={612} height={408} />
