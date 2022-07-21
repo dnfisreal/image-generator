@@ -20,6 +20,8 @@ app.use(express.urlencoded({ extended: true, limit: '1 mb' }));
 const router = express.Router();
 router.use('/api', require('./routes'));
 
+app.use('/statics', express.static(`${__dirname}/statics`));
+
 const isDevelopment = process.env.NODE_ENV === 'development';
 const isProduction = process.env.NODE_ENV === 'production' || process.env.ABT_NODE_SERVICE_ENV === 'production';
 

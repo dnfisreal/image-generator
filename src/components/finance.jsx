@@ -1,15 +1,10 @@
 import React from 'react';
 
-import finance1 from '../templates/finance_1.jpg';
-import finance2 from '../templates/finance_2.jpg';
-import finance3 from '../templates/finance_3.jpg';
-import finance4 from '../templates/finance_4.jpg';
-import finance5 from '../templates/finance_5.jpg';
-import finance6 from '../templates/finance_6.jpg';
 import './finance.css';
 import Template from './template';
 
 const Finance = () => {
+  const defaultPath = '/statics/templates/finance_';
   return (
     <>
       <div className="finance">
@@ -18,15 +13,15 @@ const Finance = () => {
 
       {/* Display all six templates */}
       <div className="finance-template-block1">
-        <Template alt="Finance Template 1" imageSource={finance1} width={878} height={404} />
-        <Template alt="Finance Template 2" imageSource={finance2} width={825} height={550} />
-        <Template alt="Finance Template 3" imageSource={finance3} width={840} height={560} />
+        <Template alt="Finance Template 1" imageSource={`${defaultPath}1.jpg`} width={878} height={404} />
+        <Template alt="Finance Template 2" imageSource={`${defaultPath}2.jpg`} width={825} height={550} />
+        <Template alt="Finance Template 3" imageSource={`${defaultPath}3.jpg`} width={840} height={560} />
       </div>
 
       <div className="finance-template-block2">
-        <Template alt="Finance Template 4" imageSource={finance4} width={857} height={504} />
-        <Template alt="Finance Template 5" imageSource={finance5} width={840} height={630} />
-        <Template alt="Finance Template 6" imageSource={finance6} width={856} height={476} />
+        <Template alt="Finance Template 4" imageSource={`${defaultPath}4.jpg`} width={857} height={504} />
+        <Template alt="Finance Template 5" imageSource={`${defaultPath}5.jpg`} width={840} height={630} />
+        <Template alt="Finance Template 6" imageSource={`${defaultPath}6.jpg`} width={856} height={476} />
       </div>
     </>
   );

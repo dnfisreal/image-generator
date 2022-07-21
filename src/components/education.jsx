@@ -1,15 +1,11 @@
 import React from 'react';
 
-import education1 from '../templates/education_1.jpg';
-import education2 from '../templates/education_2.jpg';
-import education3 from '../templates/education_3.jpg';
-import education4 from '../templates/education_4.jpg';
-import education5 from '../templates/education_5.jpg';
-import education6 from '../templates/education_6.jpg';
 import './education.css';
 import Template from './template';
 
 const Education = () => {
+  const defaultPath = '/statics/templates/education_';
+
   return (
     <>
       <div className="education">
@@ -18,15 +14,15 @@ const Education = () => {
 
       {/* Display all six templates */}
       <div className="education-template-block1">
-        <Template alt="Education Template 1" imageSource={education1} width={840} height={560} />
-        <Template alt="Education Template 2" imageSource={education2} width={856} height={571} />
-        <Template alt="Education Template 3" imageSource={education3} width={815} height={543} />
+        <Template alt="Education Template 1" imageSource={`${defaultPath}1.jpg`} width={840} height={560} />
+        <Template alt="Education Template 2" imageSource={`${defaultPath}2.jpg`} width={856} height={571} />
+        <Template alt="Education Template 3" imageSource={`${defaultPath}3.jpg`} width={815} height={543} />
       </div>
 
       <div className="education-template-block2">
-        <Template alt="Education Template 4" imageSource={education4} width={853} height={569} />
-        <Template alt="Education Template 5" imageSource={education5} width={832} height={468} />
-        <Template alt="Education Template 6" imageSource={education6} width={867} height={578} />
+        <Template alt="Education Template 4" imageSource={`${defaultPath}4.jpg`} width={853} height={569} />
+        <Template alt="Education Template 5" imageSource={`${defaultPath}5.jpg`} width={832} height={468} />
+        <Template alt="Education Template 6" imageSource={`${defaultPath}6.jpg`} width={867} height={578} />
       </div>
     </>
   );

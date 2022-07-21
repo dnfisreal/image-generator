@@ -2,7 +2,6 @@ import React, { createRef, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 
 import { useScreenshot, createFileName } from '../libs/screenshot';
-import education1 from '../templates/education_1.jpg';
 
 import Text from '../components/text';
 import ImageSize from '../components/image-size';
@@ -77,7 +76,7 @@ const Playground = () => {
           <img
             width={Number(defaultWidth)}
             height={Number(defaultHeight)}
-            src={location.state ? location.state.imageSource : education1}
+            src={location.state ? location.state.imageSource : '/statics/templates/education_1.jpg'}
             alt="Current template"
           />
           <Text
@@ -101,7 +100,7 @@ const Playground = () => {
           <img
             width={Math.floor(Number(imageSize.width))}
             height={Math.floor(Number(imageSize.height))}
-            src={location.state ? location.state.imageSource : education1}
+            src={location.state ? location.state.imageSource : '/statics/templates/education_1.jpg'}
             alt="Current template"
           />
           <Text
