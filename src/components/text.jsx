@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './text.css';
+
 // Use this component to display the text added to the image.
 const Text = ({ fontSize, topMargin, leftMargin, fontStyle, textColor, textContent }) => {
   return (
     <pre
+      className="text-on-image"
       style={{
         fontSize: Number(fontSize),
         top: `${topMargin}%`,

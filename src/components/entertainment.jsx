@@ -18,15 +18,15 @@ const Entertainment = () => {
 
       {/* Display all six templates */}
       <div className="entertainment-template-block1">
-        <Template alt="Entertainment Template 1" imageSource={entertainment1} width={513} height={340} />
-        <Template alt="Entertainment Template 2" imageSource={entertainment2} width={612} height={357} />
-        <Template alt="Entertainment Template 3" imageSource={entertainment3} width={600} height={400} />
+        <Template alt="Entertainment Template 1" imageSource={entertainment1} width={821} height={480} />
+        <Template alt="Entertainment Template 2" imageSource={entertainment2} width={856} height={500} />
+        <Template alt="Entertainment Template 3" imageSource={entertainment3} width={840} height={560} />
       </div>
 
       <div className="entertainment-template-block2">
-        <Template alt="Entertainment Template 4" imageSource={entertainment4} width={758} height={506} />
-        <Template alt="Entertainment Template 5" imageSource={entertainment5} width={500} height={375} />
-        <Template alt="Entertainment Template 6" imageSource={entertainment6} width={692} height={462} />
+        <Template alt="Entertainment Template 4" imageSource={entertainment4} width={834} height={556} />
+        <Template alt="Entertainment Template 5" imageSource={entertainment5} width={850} height={637} />
+        <Template alt="Entertainment Template 6" imageSource={entertainment6} width={830} height={554} />
       </div>
     </>
   );

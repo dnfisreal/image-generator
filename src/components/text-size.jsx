@@ -3,10 +3,10 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import PropTypes from 'prop-types';
 
-// Use this component to set sizes of certain things, such as the image size and the text size.
-const SetSize = ({ name, value, setValue, placeHolder, width }) => {
+// Use this component to set the text size.
+const TextSize = ({ name, value, setValue, placeHolder, width }) => {
   return (
-    <div className="set-size">
+    <div className="text-size">
       <Box m={2}>
         <TextField
           label={name}
@@ -21,7 +21,7 @@ const SetSize = ({ name, value, setValue, placeHolder, width }) => {
   );
 };
 
-SetSize.propTypes = {
+TextSize.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   setValue: PropTypes.func.isRequired,
@@ -29,4 +29,4 @@ SetSize.propTypes = {
   width: PropTypes.number.isRequired,
 };
 
-export default SetSize;
+export default TextSize;

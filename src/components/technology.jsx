@@ -18,15 +18,15 @@ const Technology = () => {
 
       {/* Display all six templates */}
       <div className="technology-template-block1">
-        <Template alt="Technology Template 1" imageSource={technology1} width={626} height={417} />
-        <Template alt="Technology Template 2" imageSource={technology2} width={640} height={480} />
-        <Template alt="Technology Template 3" imageSource={technology3} width={667} height={462} />
+        <Template alt="Technology Template 1" imageSource={technology1} width={814} height={542} />
+        <Template alt="Technology Template 2" imageSource={technology2} width={832} height={624} />
+        <Template alt="Technology Template 3" imageSource={technology3} width={867} height={600} />
       </div>
 
       <div className="technology-template-block2">
-        <Template alt="Technology Template 4" imageSource={technology4} width={384} height={240} />
-        <Template alt="Technology Template 5" imageSource={technology5} width={640} height={427} />
-        <Template alt="Technology Template 6" imageSource={technology6} width={717} height={544} />
+        <Template alt="Technology Template 4" imageSource={technology4} width={845} height={528} />
+        <Template alt="Technology Template 5" imageSource={technology5} width={832} height={555} />
+        <Template alt="Technology Template 6" imageSource={technology6} width={860} height={652} />
       </div>
     </>
   );

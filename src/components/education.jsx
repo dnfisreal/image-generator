@@ -18,15 +18,15 @@ const Education = () => {
 
       {/* Display all six templates */}
       <div className="education-template-block1">
-        <Template alt="Education Template 1" imageSource={education1} width={600} height={400} />
-        <Template alt="Education Template 2" imageSource={education2} width={612} height={408} />
-        <Template alt="Education Template 3" imageSource={education3} width={509} height={339} />
+        <Template alt="Education Template 1" imageSource={education1} width={840} height={560} />
+        <Template alt="Education Template 2" imageSource={education2} width={856} height={571} />
+        <Template alt="Education Template 3" imageSource={education3} width={815} height={543} />
       </div>
 
       <div className="education-template-block2">
-        <Template alt="Education Template 4" imageSource={education4} width={711} height={474} />
-        <Template alt="Education Template 5" imageSource={education5} width={462} height={260} />
-        <Template alt="Education Template 6" imageSource={education6} width={667} height={445} />
+        <Template alt="Education Template 4" imageSource={education4} width={853} height={569} />
+        <Template alt="Education Template 5" imageSource={education5} width={832} height={468} />
+        <Template alt="Education Template 6" imageSource={education6} width={867} height={578} />
       </div>
     </>
   );

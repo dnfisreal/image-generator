@@ -5,7 +5,9 @@ import { useScreenshot, createFileName } from '../libs/screenshot';
 import education1 from '../templates/education_1.jpg';
 
 import Text from '../components/text';
-import SetSize from '../components/set-size';
+import ImageSize from '../components/image-size';
+import ImageSizeRatio from '../components/image-size-ratio';
+import TextSize from '../components/text-size';
 import TextPosition from '../components/text-position';
 import TextContent from '../components/text-content';
 import TextFamily from '../components/text-family';
@@ -19,8 +21,15 @@ const Playground = () => {
   const location = useLocation();
 
   // Width and height of the image
-  const [width, setWidth] = useState(location.state ? String(location.state.width) : '600');
-  const [height, setHeight] = useState(location.state ? String(location.state.height) : '400');
+  const defaultWidth = location.state ? String(location.state.width) : '840';
+  const defaultHeight = location.state ? String(location.state.height) : '560';
+  const [imageSize, setImageSize] = useState({
+    width: defaultWidth,
+    height: defaultHeight,
+  });
+
+  // The variable to control whether to adjust the image size automatically or not.
+  const [adjustRatio, setAdjustRatio] = useState(true);
 
   // Text content added to the image
   const [textContent, setTextContent] = useState('');
@@ -64,10 +73,34 @@ const Playground = () => {
 
       {/* Region showing the previewed image */}
       <div className="preview-region">
-        <div ref={ref} className="screenshot" width={Number(width)} height={Number(height)}>
+        <div className="screenshot">
           <img
-            width={Number(width)}
-            height={Number(height)}
+            width={Number(defaultWidth)}
+            height={Number(defaultHeight)}
+            src={location.state ? location.state.imageSource : education1}
+            alt="Current template"
+          />
+          <Text
+            fontSize={fontSize}
+            topMargin={topMargin}
+            leftMargin={leftMargin}
+            fontStyle={fontStyle}
+            textColor={textColor}
+            textContent={textContent}
+          />
+        </div>
+      </div>
+
+      {/* Region for taking the screenshot */}
+      <div className="real-screenshot-region">
+        <div
+          ref={ref}
+          className="ref-screenshot"
+          width={Math.floor(Number(imageSize.width))}
+          height={Math.floor(Number(imageSize.height))}>
+          <img
+            width={Math.floor(Number(imageSize.width))}
+            height={Math.floor(Number(imageSize.height))}
             src={location.state ? location.state.imageSource : education1}
             alt="Current template"
           />
@@ -87,21 +120,26 @@ const Playground = () => {
         <div className="image-size-region">
           <p>Set the image size:</p>
           <div className="set-image-size">
-            <SetSize
+            <ImageSize
               name="Width"
-              value={width}
-              setValue={setWidth}
-              placeHolder={location.state ? String(location.state.width) : '600'}
-              width={80}
+              value={imageSize}
+              setValue={setImageSize}
+              placeHolder={defaultWidth}
+              flag={adjustRatio}
+              ratio={defaultWidth / defaultHeight}
+              sign={0}
             />
-            <SetSize
+            <ImageSize
               name="Height"
-              value={height}
-              setValue={setHeight}
-              placeHolder={location.state ? String(location.state.height) : '400'}
-              width={80}
+              value={imageSize}
+              setValue={setImageSize}
+              placeHolder={defaultHeight}
+              flag={adjustRatio}
+              ratio={defaultHeight / defaultWidth}
+              sign={1}
             />
           </div>
+          <ImageSizeRatio value={adjustRatio} setValue={setAdjustRatio} />
         </div>
 
         {/* Region for adding text to the image */}
@@ -122,7 +160,7 @@ const Playground = () => {
             Set the size and the position of the text:
           </p>
           <div className="text-size-and-position">
-            <SetSize name="Size" value={fontSize} setValue={setFontSize} placeHolder="30" width={60} />
+            <TextSize name="Size" value={fontSize} setValue={setFontSize} placeHolder="30" width={60} />
             <TextPosition
               name="Top margin (can be negative):"
               value={topMargin}

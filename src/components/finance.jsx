@@ -18,15 +18,15 @@ const Finance = () => {
 
       {/* Display all six templates */}
       <div className="finance-template-block1">
-        <Template alt="Finance Template 1" imageSource={finance1} width={732} height={336} />
-        <Template alt="Finance Template 2" imageSource={finance2} width={550} height={367} />
-        <Template alt="Finance Template 3" imageSource={finance3} width={600} height={400} />
+        <Template alt="Finance Template 1" imageSource={finance1} width={878} height={404} />
+        <Template alt="Finance Template 2" imageSource={finance2} width={825} height={550} />
+        <Template alt="Finance Template 3" imageSource={finance3} width={840} height={560} />
       </div>
 
       <div className="finance-template-block2">
-        <Template alt="Finance Template 4" imageSource={finance4} width={612} height={360} />
-        <Template alt="Finance Template 5" imageSource={finance5} width={700} height={525} />
-        <Template alt="Finance Template 6" imageSource={finance6} width={612} height={340} />
+        <Template alt="Finance Template 4" imageSource={finance4} width={857} height={504} />
+        <Template alt="Finance Template 5" imageSource={finance5} width={840} height={630} />
+        <Template alt="Finance Template 6" imageSource={finance6} width={856} height={476} />
       </div>
     </>
   );
