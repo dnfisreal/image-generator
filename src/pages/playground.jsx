@@ -1,8 +1,8 @@
 import React, { createRef, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
+import axios from 'axios';
 
 import { useScreenshot, createFileName } from '../libs/screenshot';
-
 import Text from '../components/text';
 import ImageSize from '../components/image-size';
 import ImageSizeRatio from '../components/image-size-ratio';
@@ -59,6 +59,19 @@ const Playground = () => {
   // Take the screenshot to generate the image and then download it to the user's disk
   const downloadScreenshot = () => {
     takeScreenShot(ref.current).then(download);
+  };
+
+  const sendURL = async () => {
+    const baseURL = 'http://localhost:3000/api/parameters';
+    const response = await axios.get(baseURL, {
+      params: {
+        id: location.state ? location.state.imageSource : '/statics/templates/education_1.jpg',
+        width: imageSize.width,
+        height: imageSize.height,
+      },
+    });
+    /* eslint-disable */
+    console.log(response);
   };
 
   return (
@@ -193,6 +206,9 @@ const Playground = () => {
       <div className="two-buttons">
         <button type="button" onClick={downloadScreenshot}>
           Download
+        </button>
+        <button type="button" onClick={sendURL}>
+          Share
         </button>
       </div>
     </div>

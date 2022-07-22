@@ -113,7 +113,8 @@
 }
 
 .two-buttons button {
-  margin: auto;
+  margin-right: 5%;
+  width: 200px;
   border: none;
   color: white;
   padding: 10px 60px;
