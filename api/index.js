@@ -19,23 +19,24 @@ app.use(express.urlencoded({ extended: true, limit: '1 mb' }));
 
 const router = express.Router();
 router.use('/api', require('./routes'));
+router.use('/parameters', require('./routes/parameters'));
 
 app.use('/statics', express.static(`${__dirname}/statics`));
 
-const handler = (req, res) => {
-  const imageID = req.query.id;
-  const imageWidth = req.query.width;
-  const imageHeight = req.query.height;
-  /* eslint-disable */
-  console.log(imageID);
-  /* eslint-disable */
-  console.log(imageWidth);
-  /* eslint-disable */
-  console.log(imageHeight);
-  res.send('The parameters have been received!');
-};
+// const handler = (req, res) => {
+//   const imageID = req.query.id;
+//   const imageWidth = req.query.width;
+//   const imageHeight = req.query.height;
+//   /* eslint-disable */
+//   console.log(imageID);
+//   /* eslint-disable */
+//   console.log(imageWidth);
+//   /* eslint-disable */
+//   console.log(imageHeight);
+//   res.send('The parameters have been received!');
+// };
 
-app.get('/api/parameters', handler);
+// app.get('/api/parameters', handler);
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 const isProduction = process.env.NODE_ENV === 'production' || process.env.ABT_NODE_SERVICE_ENV === 'production';

@@ -62,7 +62,7 @@ const Playground = () => {
   };
 
   const sendURL = async () => {
-    const baseURL = 'http://localhost:3000/api/parameters';
+    const baseURL = 'http://localhost:3000/parameters';
     const response = await axios.get(baseURL, {
       params: {
         id: location.state ? location.state.imageSource : '/statics/templates/education_1.jpg',
