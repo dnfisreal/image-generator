@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true, limit: '1 mb' }));
 
 const router = express.Router();
 router.use('/api', require('./routes'));
-router.use('/parameters', require('./routes/parameters'));
+router.use('/draw', require('./routes/draw'));
 
 app.use('/statics', express.static(`${__dirname}/statics`));
 

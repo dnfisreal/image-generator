@@ -62,12 +62,18 @@ const Playground = () => {
   };
 
   const sendURL = async () => {
-    const baseURL = 'http://localhost:3000/parameters';
+    const baseURL = 'http://localhost:3000/draw';
     const response = await axios.get(baseURL, {
       params: {
         id: location.state ? location.state.imageSource : '/statics/templates/education_1.jpg',
         width: imageSize.width,
         height: imageSize.height,
+        text: textContent,
+        size: fontSize,
+        top: topMargin,
+        left: leftMargin,
+        style: fontStyle,
+        color: textColor,
       },
     });
     /* eslint-disable */

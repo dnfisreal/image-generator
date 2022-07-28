@@ -17,6 +17,9 @@ module.exports = {
       '/statics': {
         target: `http://127.0.0.1:${apiPort}`,
       },
+      '/draw': {
+        target: `http://127.0.0.1:${apiPort}`,
+      },
     },
   },
 };
