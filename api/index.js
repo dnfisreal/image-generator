@@ -23,21 +23,6 @@ router.use('/draw', require('./routes/draw'));
 
 app.use('/statics', express.static(`${__dirname}/statics`));
 
-// const handler = (req, res) => {
-//   const imageID = req.query.id;
-//   const imageWidth = req.query.width;
-//   const imageHeight = req.query.height;
-//   /* eslint-disable */
-//   console.log(imageID);
-//   /* eslint-disable */
-//   console.log(imageWidth);
-//   /* eslint-disable */
-//   console.log(imageHeight);
-//   res.send('The parameters have been received!');
-// };
-
-// app.get('/api/parameters', handler);
-
 const isDevelopment = process.env.NODE_ENV === 'development';
 const isProduction = process.env.NODE_ENV === 'production' || process.env.ABT_NODE_SERVICE_ENV === 'production';
 
