@@ -5,7 +5,15 @@ function base64ToImage(base64) {
   return image;
 }
 
-module.exports = async function generate(imageID, imageWidth, imageHeight) {
+module.exports = async function generate(
+  imageID,
+  imageWidth,
+  imageHeight,
+  textContent,
+  textSize,
+  textStyle,
+  textColor
+) {
   const canvas = createCanvas(parseInt(imageWidth, 10), parseInt(imageHeight, 10));
   const ctx = canvas.getContext('2d');
 
@@ -13,7 +21,9 @@ module.exports = async function generate(imageID, imageWidth, imageHeight) {
 
   return loadImage(imageURL).then((image) => {
     ctx.drawImage(image, 0, 0, imageWidth, imageHeight);
-    ctx.fillText('test', 300, 300);
+    ctx.font = `${textSize}px ${textStyle}`;
+    ctx.fillStyle = textColor;
+    ctx.fillText(textContent, 300, 300);
 
     const dataURL = canvas.toDataURL('image/png');
 

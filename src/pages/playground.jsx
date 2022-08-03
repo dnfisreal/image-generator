@@ -1,6 +1,7 @@
 import React, { createRef, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import axios from 'axios';
+import { Buffer } from 'buffer';
 
 import { useScreenshot, createFileName } from '../libs/screenshot';
 import Text from '../components/text';
@@ -18,6 +19,8 @@ const Playground = () => {
   // The variable for getting the screenshot div
   const ref = createRef(null);
   const location = useLocation();
+
+  const [tmp, setTmp] = useState();
 
   // Width and height of the image
   const defaultWidth = location.state ? String(location.state.width) : '840';
@@ -75,9 +78,12 @@ const Playground = () => {
         style: fontStyle,
         color: textColor,
       },
+      responseType: 'arraybuffer',
     });
     /* eslint-disable */
     console.log(response);
+    const base64ImageString = Buffer.from(response.data, 'binary').toString('base64');
+    setTmp('data:image/png;base64,' + base64ImageString);
   };
 
   return (
@@ -216,6 +222,9 @@ const Playground = () => {
         <button type="button" onClick={sendURL}>
           Share
         </button>
+      </div>
+      <div>
+        <img src={tmp} alt="lol" />
       </div>
     </div>
   );

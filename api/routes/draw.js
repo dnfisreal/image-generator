@@ -14,25 +14,11 @@ router.get('/', async (req, res) => {
   const textColor = req.query.color;
 
   /* eslint-disable */
-  console.log(imageID);
-  /* eslint-disable */
-  console.log(imageWidth);
-  /* eslint-disable */
-  console.log(imageHeight);
-  /* eslint-disable */
-  console.log(textContent);
-  /* eslint-disable */
-  console.log(textSize);
-  /* eslint-disable */
   console.log(topMargin);
   /* eslint-disable */
   console.log(leftMargin);
-  /* eslint-disable */
-  console.log(textStyle);
-  /* eslint-disable */
-  console.log(textColor);
 
-  const image = await drawImage(imageID, imageWidth, imageHeight);
+  const image = await drawImage(imageID, imageWidth, imageHeight, textContent, textSize, textStyle, textColor);
   res.set('content-type', 'image/png');
 
   res.send(image);
@@ -40,4 +26,4 @@ router.get('/', async (req, res) => {
 
 module.exports = router;
 
-// http://localhost:3000/draw?id=/statics/templates/education_1.jpg&width=900&height=600&text=test&size=30&top=45&left=50&style=Arial, Helvetica, sans-serif&color=red
+// http://localhost:3000/draw?id=/statics/templates/education_1.jpg&width=900&height=600&text=oefjewonfn&size=30&top=45&left=50&style=Arial, Helvetica, sans-serif&color=red
