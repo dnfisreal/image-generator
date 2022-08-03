@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const drawImage = require('../libs/canvas');
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
   const imageID = req.query.id;
   const imageWidth = req.query.width;
   const imageHeight = req.query.height;
@@ -32,8 +32,9 @@ router.get('/', (req, res) => {
   /* eslint-disable */
   console.log(textColor);
 
-  const image = drawImage(imageID, imageWidth, imageHeight);
-  res.set('content-type', 'image/jpg');
+  const image = await drawImage(imageID, imageWidth, imageHeight);
+  res.set('content-type', 'image/png');
+
   res.send(image);
 });
 

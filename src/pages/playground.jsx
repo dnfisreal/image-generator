@@ -19,8 +19,6 @@ const Playground = () => {
   const ref = createRef(null);
   const location = useLocation();
 
-  const [tmp, setTmp] = useState();
-
   // Width and height of the image
   const defaultWidth = location.state ? String(location.state.width) : '840';
   const defaultHeight = location.state ? String(location.state.height) : '560';
@@ -80,8 +78,6 @@ const Playground = () => {
     });
     /* eslint-disable */
     console.log(response);
-    console.log('lol');
-    setTmp(response.data);
   };
 
   return (
@@ -220,9 +216,6 @@ const Playground = () => {
         <button type="button" onClick={sendURL}>
           Share
         </button>
-      </div>
-      <div>
-        <img src={tmp} alt="lol" />
       </div>
     </div>
   );

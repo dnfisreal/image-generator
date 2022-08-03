@@ -6,15 +6,17 @@ function base64ToImage(base64) {
 }
 
 module.exports = async function generate(imageID, imageWidth, imageHeight) {
-  const canvas = createCanvas(imageWidth, imageHeight);
-  const context = canvas.getContext('2d');
+  const canvas = createCanvas(parseInt(imageWidth, 10), parseInt(imageHeight, 10));
+  const ctx = canvas.getContext('2d');
 
   const imageURL = `http://localhost:3000${imageID}`;
 
-  loadImage(imageURL).then((image) => {
-    context.drawImage(image, 0, 0, imageWidth, imageHeight);
+  return loadImage(imageURL).then((image) => {
+    ctx.drawImage(image, 0, 0, imageWidth, imageHeight);
+    ctx.fillText('test', 300, 300);
 
-    const dataURL = canvas.toDataURL('image/jpg');
+    const dataURL = canvas.toDataURL('image/png');
+
     return base64ToImage(dataURL);
   });
 };
