@@ -13,12 +13,17 @@ router.get('/', async (req, res) => {
   const textStyle = req.query.style;
   const textColor = req.query.color;
 
-  /* eslint-disable */
-  console.log(topMargin);
-  /* eslint-disable */
-  console.log(leftMargin);
-
-  const image = await drawImage(imageID, imageWidth, imageHeight, textContent, textSize, textStyle, textColor);
+  const image = await drawImage(
+    imageID,
+    imageWidth,
+    imageHeight,
+    textContent,
+    textSize,
+    topMargin,
+    leftMargin,
+    textStyle,
+    textColor
+  );
   res.set('content-type', 'image/png');
 
   res.send(image);

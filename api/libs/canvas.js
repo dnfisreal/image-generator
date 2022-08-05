@@ -11,6 +11,8 @@ module.exports = async function generate(
   imageHeight,
   textContent,
   textSize,
+  topMargin,
+  leftMargin,
   textStyle,
   textColor
 ) {
@@ -18,12 +20,17 @@ module.exports = async function generate(
   const ctx = canvas.getContext('2d');
 
   const imageURL = `http://localhost:3000${imageID}`;
+  const leftDistance = (imageWidth * leftMargin) / 100;
+  const topDistance = (imageHeight * topMargin) / 100;
+
+  const metrics = ctx.measureText(textContent);
+  const actualHeight = metrics.actualBoundingBoxAscent + metrics.actualBoundingBoxDescent;
 
   return loadImage(imageURL).then((image) => {
     ctx.drawImage(image, 0, 0, imageWidth, imageHeight);
     ctx.font = `${textSize}px ${textStyle}`;
     ctx.fillStyle = textColor;
-    ctx.fillText(textContent, 300, 300);
+    ctx.fillText(textContent, leftDistance, topDistance + actualHeight);
 
     const dataURL = canvas.toDataURL('image/png');
 
