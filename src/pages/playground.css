@@ -82,6 +82,7 @@
 .text-size-and-position {
   display: flex;
   text-align: center;
+  justify-content: center;
 }
 
 .parameter-region2 {

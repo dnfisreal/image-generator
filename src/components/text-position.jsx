@@ -13,7 +13,7 @@ const TextPosition = ({ name, value, setValue, placeHolder }) => {
           label={name}
           value={value}
           placeholder={placeHolder}
-          style={{ width: 170 }}
+          style={{ width: 80 }}
           // Since the variable passed into the text style is in percentage form,
           // add a "%" suffix after the text field.
           InputProps={{

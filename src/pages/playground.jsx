@@ -41,7 +41,7 @@ const Playground = () => {
 
   // Two variables indicating the distance from the text to the top and left border of the image respectively
   const [topMargin, setTopMargin] = useState('45');
-  const [leftMargin, setLeftMargin] = useState('50');
+  const [leftMargin, setLeftMargin] = useState('45');
 
   // Font family of the text
   const [fontStyle, setFontStyle] = useState('Arial, Helvetica, sans-serif');
@@ -185,18 +185,8 @@ const Playground = () => {
           </p>
           <div className="text-size-and-position">
             <TextSize name="Size" value={fontSize} setValue={setFontSize} placeHolder="30" width={60} />
-            <TextPosition
-              name="Top margin (can be negative):"
-              value={topMargin}
-              setValue={setTopMargin}
-              placeHolder="45"
-            />
-            <TextPosition
-              name="Left margin (can be negative):"
-              value={leftMargin}
-              setValue={setLeftMargin}
-              placeHolder="50"
-            />
+            <TextPosition name="Top margin:" value={topMargin} setValue={setTopMargin} placeHolder="45" />
+            <TextPosition name="Left margin:" value={leftMargin} setValue={setLeftMargin} placeHolder="45" />
           </div>
         </div>
       </div>
