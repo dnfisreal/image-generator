@@ -20,6 +20,9 @@ module.exports = {
       '/draw': {
         target: `http://127.0.0.1:${apiPort}`,
       },
+      '/assets': {
+        target: `http://127.0.0.1:${apiPort}`,
+      },
     },
   },
 };
