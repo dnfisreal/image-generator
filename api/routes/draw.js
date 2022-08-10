@@ -29,16 +29,22 @@ router.get('/', async (req, res) => {
 
   const dirName = '/assets/';
   const dirPath = path.join(process.env.BLOCKLET_DATA_DIR, `${dirName}`);
-  const fileName = 'image.png';
-  const filePath = path.resolve(dirPath, fileName);
+
+  const index1 = imageID.lastIndexOf('/');
+  const index2 = imageID.indexOf('.');
+  const imageCategory = imageID.slice(index1 + 1, index2);
+  const colorName = textColor.slice(1);
+  const fileName = `${imageCategory},${imageWidth}*${imageHeight},${textContent},${textSize},${topMargin}_and_${leftMargin},${textStyle},${colorName}.png`;
+  const finalName = fileName.replaceAll(' ', '_');
+  const filePath = path.resolve(dirPath, finalName);
 
   /* eslint-disable */
   await fs.writeFile(filePath, image, function (err, result) {
     if (err) console.log('error', err);
   });
 
-  res.set('content-type', 'image/png');
-  res.send(image);
+  const finalURL = `${process.env.BLOCKLET_APP_URL}/assets/${finalName}`;
+  res.send(finalURL);
 });
 
 module.exports = router;

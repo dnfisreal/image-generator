@@ -1,6 +1,6 @@
 name: image-generator
 title: image-generator
-description: A Blocklet DAPP blocklet
+description: An image generator to create images based on templates
 keywords:
   - blocklet
   - react

@@ -46,6 +46,8 @@ const Playground = () => {
   // Color of the text
   const [textColor, setTextColor] = useState('#000000');
 
+  const [imageURL, setImageURL] = useState('');
+
   const [, takeScreenShot] = useScreenshot();
 
   // Download the generated image as a jpg file named "image"
@@ -78,6 +80,8 @@ const Playground = () => {
     });
     /* eslint-disable */
     console.log(response);
+
+    setImageURL(response.data);
   };
 
   return (
@@ -207,6 +211,8 @@ const Playground = () => {
           Share
         </button>
       </div>
+
+      <div className="image-share-url">{imageURL}</div>
     </div>
   );
 };
