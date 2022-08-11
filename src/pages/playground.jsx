@@ -11,6 +11,7 @@ import TextPosition from '../components/text-position';
 import TextContent from '../components/text-content';
 import TextFamily from '../components/text-family';
 import TextColor from '../components/text-color';
+import ImageURL from '../components/image-url';
 
 import './playground.css';
 
@@ -49,6 +50,12 @@ const Playground = () => {
   // URL of the final image
   const [imageURL, setImageURL] = useState('');
 
+  // Whether the user has copied the image URL
+  const [isCopied, setIsCopied] = useState(false);
+
+  // Whether the image URL is shown
+  const [showURL, setShowURL] = useState(false);
+
   const [, takeScreenShot] = useScreenshot();
 
   // Download the generated image as a jpg file named "image"
@@ -83,6 +90,7 @@ const Playground = () => {
     /* eslint-disable */
     console.log(response);
 
+    setShowURL(true);
     setImageURL(response.data);
   };
 
@@ -216,7 +224,7 @@ const Playground = () => {
       </div>
 
       {/* Display the image URL */}
-      <div className="image-share-url">{imageURL}</div>
+      {showURL && <ImageURL urlValue={imageURL} copyValue={isCopied} setCopyValue={setIsCopied} />}
     </div>
   );
 };

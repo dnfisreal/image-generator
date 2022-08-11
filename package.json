@@ -44,6 +44,7 @@
     "@blocklet/sdk": "^1.7.18",
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.9.0",
     "@ocap/client": "^1.16.9",
     "@ocap/mcrypto": "^1.16.9",
@@ -64,7 +65,9 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",
     "react-color": "^2.19.3",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.1.0",
+    "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
     "use-react-screenshot": "^3.0.0"
   },
