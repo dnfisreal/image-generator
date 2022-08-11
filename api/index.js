@@ -24,7 +24,14 @@ router.use('/draw', require('./routes/draw'));
 app.use('/statics', express.static(`${__dirname}/statics`));
 
 const assetDir = path.resolve(process.env.BLOCKLET_DATA_DIR, 'assets');
-app.use('/assets', express.static(assetDir));
+app.use(
+  '/assets',
+  express.static(assetDir, {
+    setHeaders(res) {
+      res.set('content-type', 'image/png');
+    },
+  })
+);
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 const isProduction = process.env.NODE_ENV === 'production' || process.env.ABT_NODE_SERVICE_ENV === 'production';

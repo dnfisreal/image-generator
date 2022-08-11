@@ -110,7 +110,6 @@
 
 .two-buttons {
   padding-top: 3%;
-  padding-bottom: 3%;
 }
 
 .two-buttons button {
@@ -127,4 +126,9 @@
 
 .two-buttons button:hover {
   transform: scale(1.05);
+}
+
+.image-share-url {
+  padding-top: 2%;
+  padding-bottom: 3%;
 }

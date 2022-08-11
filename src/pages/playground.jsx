@@ -46,6 +46,7 @@ const Playground = () => {
   // Color of the text
   const [textColor, setTextColor] = useState('#000000');
 
+  // URL of the final image
   const [imageURL, setImageURL] = useState('');
 
   const [, takeScreenShot] = useScreenshot();
@@ -63,6 +64,7 @@ const Playground = () => {
     takeScreenShot(ref.current).then(download);
   };
 
+  // Send the image parameters to the backend and get the image URL
   const sendURL = async () => {
     const baseURL = '/draw';
     const response = await axios.get(baseURL, {
@@ -203,6 +205,7 @@ const Playground = () => {
         </div>
       </div>
 
+      {/* Two buttons to download the image and get the image URL */}
       <div className="two-buttons">
         <button type="button" onClick={downloadScreenshot}>
           Download
@@ -212,6 +215,7 @@ const Playground = () => {
         </button>
       </div>
 
+      {/* Display the image URL */}
       <div className="image-share-url">{imageURL}</div>
     </div>
   );

@@ -1,9 +1,11 @@
+// This router is used to deal with /draw requests
 const path = require('path');
 const fs = require('fs');
 const router = require('express').Router();
 const drawImage = require('../libs/canvas');
 
 router.get('/', async (req, res) => {
+  // Extract all the parameters from the given URL
   const imageID = req.query.id;
   const imageWidth = req.query.width;
   const imageHeight = req.query.height;
@@ -27,26 +29,34 @@ router.get('/', async (req, res) => {
     textColor
   );
 
+  // Set the image file path
   const dirName = '/assets/';
   const dirPath = path.join(process.env.BLOCKLET_DATA_DIR, `${dirName}`);
 
+  // Set the name of the file
   const index1 = imageID.lastIndexOf('/');
   const index2 = imageID.indexOf('.');
   const imageCategory = imageID.slice(index1 + 1, index2);
+
+  const regex = /[^A-Za-z0-9]/g;
+  const textName = textContent.replace(regex, '');
+
   const colorName = textColor.slice(1);
-  const fileName = `${imageCategory},${imageWidth}*${imageHeight},${textContent},${textSize},${topMargin}_and_${leftMargin},${textStyle},${colorName}.png`;
+
+  const fileName = `${imageCategory},${imageWidth}*${imageHeight},${textName},${textSize},${topMargin}_and_${leftMargin},${textStyle},${colorName}.png`;
   const finalName = fileName.replaceAll(' ', '_');
+
   const filePath = path.resolve(dirPath, finalName);
 
+  // Write the image to that file path
   /* eslint-disable */
   await fs.writeFile(filePath, image, function (err, result) {
     if (err) console.log('error', err);
   });
 
+  // Send the path back to the front end
   const finalURL = `${process.env.BLOCKLET_APP_URL}/assets/${finalName}`;
   res.send(finalURL);
 });
 
 module.exports = router;
-
-// http://localhost:8096/draw?id=/statics/templates/education_1.jpg&width=900&height=600&text=oefjewonfn&size=30&top=45&left=50&style=Arial, Helvetica, sans-serif&color=red
