@@ -4,7 +4,7 @@ import './technology.css';
 import Template from './template';
 
 const Technology = () => {
-  const defaultPath = '/statics/templates/technology_';
+  const defaultPath = '/statics/technology_';
 
   return (
     <>

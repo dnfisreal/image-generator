@@ -4,7 +4,7 @@ import './education.css';
 import Template from './template';
 
 const Education = () => {
-  const defaultPath = '/statics/templates/education_';
+  const defaultPath = '/statics/education_';
 
   return (
     <>

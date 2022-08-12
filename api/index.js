@@ -21,7 +21,8 @@ const router = express.Router();
 router.use('/api', require('./routes'));
 router.use('/draw', require('./routes/draw'));
 
-app.use('/statics', express.static(`${__dirname}/statics`));
+const templatesDir = path.resolve(process.env.BLOCKLET_DATA_DIR, 'templates');
+app.use('/statics', express.static(templatesDir));
 
 const assetDir = path.resolve(process.env.BLOCKLET_DATA_DIR, 'assets');
 app.use(

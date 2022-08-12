@@ -76,7 +76,7 @@ const Playground = () => {
     const baseURL = '/draw';
     const response = await axios.get(baseURL, {
       params: {
-        id: location.state ? location.state.imageSource : '/statics/templates/education_1.jpg',
+        id: location.state ? location.state.imageSource : '/statics/education_1.jpg',
         width: imageSize.width,
         height: imageSize.height,
         text: textContent,
@@ -109,7 +109,7 @@ const Playground = () => {
           <img
             width={Number(defaultWidth)}
             height={Number(defaultHeight)}
-            src={location.state ? location.state.imageSource : '/statics/templates/education_1.jpg'}
+            src={location.state ? location.state.imageSource : '/statics/education_1.jpg'}
             alt="Current template"
           />
           <Text
@@ -133,7 +133,7 @@ const Playground = () => {
           <img
             width={Math.floor(Number(imageSize.width))}
             height={Math.floor(Number(imageSize.height))}
-            src={location.state ? location.state.imageSource : '/statics/templates/education_1.jpg'}
+            src={location.state ? location.state.imageSource : '/statics/education_1.jpg'}
             alt="Current template"
           />
           <Text

@@ -4,7 +4,7 @@ import './environment.css';
 import Template from './template';
 
 const Environment = () => {
-  const defaultPath = '/statics/templates/environment_';
+  const defaultPath = '/statics/environment_';
 
   return (
     <>

@@ -1,6 +1,6 @@
 name: image-generator
-title: image-generator
-description: An image generator to create images based on templates
+title: Image Generator
+description: An app to create images with certain features based on templates
 keywords:
   - blocklet
   - react
@@ -15,10 +15,10 @@ repository:
   url: git+https://github.com/blocklet/create-blocklet.git
 specVersion: 1.1.1
 version: 0.1.0
-logo: logo.png
+logo: white-album-icon-3.jpeg
 files:
   - build
-  - logo.png
+  - white-album-icon-3.jpeg
   - README.md
   - blocklet.md
   - screenshots

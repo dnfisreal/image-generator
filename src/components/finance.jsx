@@ -4,7 +4,7 @@ import './finance.css';
 import Template from './template';
 
 const Finance = () => {
-  const defaultPath = '/statics/templates/finance_';
+  const defaultPath = '/statics/finance_';
   return (
     <>
       <div className="finance">

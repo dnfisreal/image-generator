@@ -4,7 +4,7 @@ import './entertainment.css';
 import Template from './template';
 
 const Entertainment = () => {
-  const defaultPath = '/statics/templates/entertainment_';
+  const defaultPath = '/statics/entertainment_';
 
   return (
     <>
